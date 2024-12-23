@@ -53,9 +53,9 @@ This project is an API for managing products in an e-commerce application. It is
 
 | Endpoint                | Method | Description              |
 |-------------------------|--------|--------------------------|
-| `/api/products/`        | GET    | Fetch all products       |
+| `/api/products/list/`        | GET    | Fetch all products       |
 | `/api/products/<id>/`   | GET    | Fetch a single product   |
-| `/api/products/`        | POST   | Create a new product     |
+| `/api/products/create/`        | POST   | Create a new product     |
 | `/api/products/<id>/`   | PUT    | Update a product         |
 | `/api/products/<id>/`   | DELETE | Delete a product         |
 
@@ -65,12 +65,12 @@ You can test the endpoints using Postman or curl. Below are examples of some req
 
 ### Fetch All Products
 ```bash
-GET http://127.0.0.1:8000/api/products/
+GET http://127.0.0.1:8000/api/products/list/
 ```
 
 ### Create a New Product
 ```bash
-POST http://127.0.0.1:8000/api/products/
+POST http://127.0.0.1:8000/api/products/create/
 Content-Type: application/json
 {
     "name": "Product Name",
@@ -126,6 +126,3 @@ If you want to contribute to this project:
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a pull request.
 
-## License
-
-[MIT License](LICENSE)

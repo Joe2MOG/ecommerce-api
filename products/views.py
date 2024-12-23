@@ -49,10 +49,3 @@ class ProductSearchView(generics.ListAPIView):
             queryset = queryset.filter(category__name__icontains=category)  # Assuming category is a related model
 
         return queryset
-
-#from rest_framework.decorators import api_view
-#from rest_framework.response import Response
-#@api_view(['GET', 'POST'])
-#def product_list(request):
- #   if request.method == 'GET':
-  #      return Response([])
