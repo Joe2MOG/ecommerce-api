@@ -8,6 +8,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView, ListAPIView
 from django.db.models import Q
 from rest_framework.pagination import PageNumberPagination
+from .models import Category
+from .serializers import CategorySerializer
 
 class ProductCreateView(CreateAPIView):
     queryset = Product.objects.all()
@@ -49,3 +51,7 @@ class ProductSearchView(generics.ListAPIView):
             queryset = queryset.filter(category__name__icontains=category)  # Assuming category is a related model
 
         return queryset
+
+class CategoryListCreateView(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
